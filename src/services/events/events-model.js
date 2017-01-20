@@ -14,8 +14,9 @@ const eventsSchema = new Schema({
   referrer: { type: String },
   documentURI: { type: String },
   userAgent: { type: String },
-  product_sku: { type: String },
-  product_price: { type: String },
+  productId: { type: String },
+  productPrice: { type: String },
+  customerId: { type: String }
   createdAt: { type: Date, 'default': Date.now },
   updatedAt: { type: Date, 'default': Date.now }
 });

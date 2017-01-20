@@ -7,17 +7,25 @@
 
 module.exports = function(options) {
   return function(hook) {
-    // The actual message text
-    const clientId = hook.data.client.clientId
-      // Messages can't be longer than 400 characters
-      .substring(0, 50)
-      // Do some basic HTML escaping
-      .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
-
+    const clientId = hook.data.client.clientId.substring(0, 50).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+    const apiKey = hook.data.client.apiKey.substring(0, 50).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+    const productId = hook.data.product.prodid.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+    const productPrice = hook.data.product.price;
+    const referrer = hook.data.headers.referrer.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+    const documentURI = hook.data.headers.uri.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+    const userAgent = hook.data.headers.agent.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+    const customerId = hook.data.customer.customerId;
     // Override the original data
     hook.data = {
-      clientId,
-      createdAt: new Date().getTime()
+        apiKey,
+        clientId,
+        productId,
+        productPrice,
+        customerId,
+        referrer,
+        documentURI,
+        userAgent,
+        createdAt: new Date().getTime()
     };
   };
 };
