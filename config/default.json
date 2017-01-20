@@ -1,0 +1,12 @@
+{
+  "host": "localhost",
+  "port": 3030,
+  "mongodb": "mongodb://trackerdb:101010@ds023315.mlab.com:23315/glog",
+  "public": "../public/",
+  "auth": {
+    "token": {
+      "secret": "GH2cCJhKalHAggbQMQQvMFXWTbc1cwalZs2niI5/aEOeZKqkLrBR3rt3M415f1lT3zp+5tk4UuA7x50uxD0IRA=="
+    },
+    "local": {}
+  }
+}
