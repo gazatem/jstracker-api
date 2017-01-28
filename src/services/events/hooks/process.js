@@ -10,7 +10,7 @@ module.exports = function(options) {
     const client_id = hook.data.client.client_id.substring(0, 50).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
     const api_key = hook.data.client.api_key.substring(0, 50).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
     
-    const product_id = hook.data.product.id.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+    const product_id = hook.data.product.id;
     const product_price = hook.data.product.price;
     const product_model = hook.data.product.model;
     const product_name = hook.data.product.name;

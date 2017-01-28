@@ -9,14 +9,19 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const eventsSchema = new Schema({
-  apiKey: { type: String },
-  clientId: { type: String },
+  client_id: { type: String },
+  api_key: { type: String },
+  product_id: { type: String },
+  product_name: { type: String },
+  product_model: { type: String },
+  product_price: { type: String },
+  customer_id: { type: String },
+  customer_name: { type: String },
+  customer_email: { type: String },
+  customer_phone: { type: String},
   referrer: { type: String },
   documentURI: { type: String },
   userAgent: { type: String },
-  productId: { type: String },
-  productPrice: { type: String },
-  customerId: { type: String }
   createdAt: { type: Date, 'default': Date.now },
   updatedAt: { type: Date, 'default': Date.now }
 });
