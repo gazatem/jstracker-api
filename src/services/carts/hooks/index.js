@@ -3,14 +3,13 @@
 const globalHooks = require('../../../hooks');
 const hooks = require('feathers-hooks');
 const process = require('./process');
-const auth = require('./auth');
 
 exports.before = {
-  all: [auth()],
+  all: [],
   find: [],
   get: [],
-  create: [process()],
-  update: [process()],
+  create: [],
+  update: [],
   patch: [],
   remove: []
 };

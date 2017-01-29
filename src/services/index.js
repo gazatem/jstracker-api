@@ -1,4 +1,6 @@
 'use strict';
+const orders = require('./orders');
+const carts = require('./carts');
 const events = require('./events');
 const authentication = require('./authentication');
 const user = require('./user');
@@ -12,4 +14,6 @@ module.exports = function() {
   app.configure(authentication);
   app.configure(user);
   app.configure(events);
+  app.configure(carts);
+  app.configure(orders);
 };
